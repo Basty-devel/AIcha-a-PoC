@@ -1,111 +1,111 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
+        body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom right, #1a1a1a, #333);
+        color: salmon;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        box-sizing: border-box;
+        }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
+        #captchaContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; /* Ensure it's above other elements */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-nav li {
-    margin: 0 10px;
-}
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
 
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+        .logo-img {
+            max-width: 250px; /* Set a max width for the logo */
+            margin-right: 20px; /* Add space to the right of the logo */
+        }
 
-section {
-    margin-bottom: 20px;
-}
+        main {
+            padding: 80px 20px 20px;
+            text-align: center; /* Center the content horizontally */
+        }
 
-h1, h2 {
-    color: #333;
-}
+        section {
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin: 0 auto; /* Center the content horizontally */
+            text-align: left; /* Align text to the left */
+        }
 
-p {
-    line-height: 1.6;
-}
+        .highlight {
+            font-weight: bold;
+            color: #4285f4; /* Use a color that stands out */
+        }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
 
-li {
-    margin-bottom: 10px;
-}
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
 
-label {
-    margin-bottom: 5px;
-}
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease-in-out;
+        }
 
-input[type="text"], input[type="email"], textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
+        input:focus, textarea:focus {
+            border-color: #4285f4;
+        }
 
-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #444;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-
-/* CSS3 styles */
-header {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-nav a:hover {
-    color: #ff6347;
-}
-
-form input[type="text"]:focus, form input[type="email"]:focus, form textarea:focus {
-    outline: none;
-    border-color: #333;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-button:active {
-    transform: scale(0.95);
-}
+        button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
