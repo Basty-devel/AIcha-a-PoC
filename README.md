@@ -1,5 +1,5 @@
 # Loca-Devel-a-PoC
-LLM loaded into LocalGPT with upload function to embed new data, has a PyQT6 Browser interface and a crawler to scrape new content.
+LLM loaded into LocalGPT with upload function to embed new data, has a PyQt6 Browser interface and a crawler to scrape new content.
 
 Loca-Devel is a cutting-edge AI-powered coding platform, featuring a series of code language models designed to elevate your coding experience. Explore the capabilities of Deepseek Coder, our flagship model, which achieves state-of-the-art performance across various programming languages and benchmarks.
 
