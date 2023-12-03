@@ -19,3 +19,36 @@ form.addEventListener('submit', (event) => {
   document.querySelector('#email').value = '';
   document.querySelector('#message').value = '';
 });
+// Generate a random alphanumeric string for the CAPTCHA
+function generateCaptcha() {
+    const length = 5;
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!"§$%&/()=?-+.,#;:_<>*{[]}€';
+    let captcha = '';
+    for (let i = 0; i < length; i++) {
+        captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return captcha;
+}
+      
+// Display the CAPTCHA on page load
+document.getElementById('captcha').textContent = generateCaptcha();
+      
+// Refresh the CAPTCHA
+function refreshCaptcha() {
+    document.getElementById('captcha').textContent = generateCaptcha();
+}
+      
+// Validate user input
+function validateCaptcha() {
+    const userInput = document.getElementById('userInput').value;
+    const actualCaptcha = document.getElementById('captcha').textContent;
+      
+    if (userInput.toLowerCase() === actualCaptcha.toLowerCase()) {
+        alert('Captcha is correct. Form submission allowed!');
+        // Submit the form
+        document.getElementById('captcha').submit();
+    } else {
+        // Handle incorrect Captcha (e.g., clear input or show an error message)
+        errorMessageElement.textContent = 'Incorrect Captcha. Please try again.';      
+        refreshCaptcha(); // Optional: Refresh the Captcha after an incorrect attempt
+}
