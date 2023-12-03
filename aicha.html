@@ -7,26 +7,30 @@
     <meta name="description" content="Loca-Devel - Your local Interactive developement Assistant for a excellent coding XP.">
     <meta name="keywords" content="Loca-Devel, Interactive Assistant, AI, Coding, Web Development">
     <meta name="author" content="Sebastian F. Nestler">
-
     <!-- Favicon -->
     <link rel="icon" href="loca-devel.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="aicha.css" type="css">
     <title>Loca-Devel: Where Coding Meets the Infinite!</title>
-    <link rel="stylesheet" href="aicha.css">
-    <script src="aicha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.0/fingerprint2.min.js"></script>
+    <script src="aicha.js"></script>    
 </head>
 <body>
     <header>
+        <img class="logo-img" src="loca-devel.png" alt="Loca-Devel Logo">
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#home">   Home   </a></li>
+                <li><a href="#about">About   </a></li>
+                <li><a href="#services">Services   </a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <div align-item="left">
+       
+    </div>
+    <main >
+        
         <section id="home">
             <h1>Welcome to Loca-Devel</h1>
             <p class="highlight">Embark on a coding odyssey like never before with Loca-Devel, where innovation meets intuition!</p>
@@ -63,21 +67,38 @@
                 <li>Mobile App Development</li>
             </ul>
         </section>
-        <section id="contact">
+        <section id="registrationForm">
             <h2>Contact Us</h2>
-            <form>
+            <form action="mailto:{{c25lc3RsZXIxMTBAZ21haWwuY29t}}" method="post" enctype="text/plain">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send Message</button>
+                <div id="captchaContainer">
+                    <span id="captcha"></span>
+                    <button onclick="refreshCaptcha()">Refresh</button>
+                </div>
+                <label for="userInput">Enter the code above:</label>
+                <input type="text" id="userInput" name="userInput" required>
+                
+                <button type="button" onclick="validateCaptcha()">Submit</button>
+                <button type="submit">Start Registration</button>
+            </form>
+            <!-- Login Form -->
+            <form id="loginForm" style="display: none;">
+                <label for="otp">OTP:</label>
+                <input type="text" id="otp" name="otp" required><br>
+            
+                <button type="button" onclick="login()">Login</button>
             </form>
         </section>
     </main>
     <footer>
         <p>&copy; 2023 Loca-Devel. All rights reserved.</p>
     </footer>
+    <script>
+    </script>
 </body>
 </html>
