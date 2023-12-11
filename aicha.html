@@ -7,84 +7,34 @@
     <meta name="description" content="Loca-Devel - Your local Interactive developement Assistant for a excellent coding XP.">
     <meta name="keywords" content="Loca-Devel, Interactive Assistant, AI, Coding, Web Development">
     <meta name="author" content="Sebastian F. Nestler">
+
     <!-- Favicon -->
     <link rel="icon" href="loca-devel.ico" type="image/x-icon">
-    <link rel="stylesheet" href="aicha.css" type="css">
+    <link rel="stylesheet" type="text/css" href="aicha.css">
     <title>Loca-Devel: Where Coding Meets the Infinite!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.0/fingerprint2.min.js"></script>
-    <script src="aicha.js"></script>    
+    <script src="aicha.js"></script>
+    
 </head>
 <body>
     <header>
-        <img class="logo-img" src="loca-devel.png" alt="Loca-Devel Logo">
-        <nav>
-            <ul>
-                <li><a href="#home">   Home   </a></li>
-                <li><a href="#about">About   </a></li>
-                <li><a href="#services">Services   </a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <img class="logo-img" src="Authease3.svg" alt="AuthEase Logo">
+        </div>
     </header>
-    <div align-item="left">
-       
-    </div>
     <main >
-        
-        <section id="home">
-            <h1>Welcome to Loca-Devel</h1>
-            <p class="highlight">Embark on a coding odyssey like never before with Loca-Devel, where innovation meets intuition!</p>
-            <p>At Loca-Devel, we're not just another AI coding web app; we are the <span class="highlight">trailblazers</span> of a programming revolution!</p>
-            <p>Picture a realm where code isn't just written; it's <span class="highlight">crafted</span>, where algorithms dance in symphony, and creativity is the guiding force.</p>
-            <p>Unleash your coding prowess with our <span class="highlight">state-of-the-art AI wizardry</span>. Loca-Devel is more than just a tool; it's your <span class="highlight">companion in code</span>, deciphering the language of machines with finesse.</p>
-            <p>Experience the <span class="highlight">unparalleled synergy</span> between human ingenuity and artificial intelligence. Our intuitive interface is your canvas, and the code, your masterpiece.</p>
-            <p>We transcend the conventional, breaking barriers and <span class="highlight">defying the ordinary</span>. Loca-Devel isn't bound by limits; it <span class="highlight">elevates your coding experience</span> to the extraordinary!</p>
-            <p>Whether you're a seasoned developer or a curious novice, Loca-Devel is your <span class="highlight">gateway to a new dimension</span> of coding brilliance. Embrace the future, where innovation knows no bounds!</p>
-            <p>Join us in rewriting the narrative of coding at Loca-Devel, where each line of code is a <span class="highlight">stroke of genius</span> and every project, a masterpiece in the making!</p>
-            <p class="highlight">Loca-Devel: Where Coding Meets the Infinite!</p>
-        </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p><p>Loca-Devel is a cutting-edge AI-powered coding platform, featuring a series of code language models designed to elevate your coding experience. Explore the capabilities of Deepseek Coder, our flagship model, which achieves state-of-the-art performance across various programming languages and benchmarks.</p>
-
-            <h2>Key Features</h2>
-            <ul>
-                <li><span class="highlight">Massive Training Data:</span> Trained from scratch on 2T tokens, comprising 87% code and 13% linguistic data in both English and Chinese languages.</li>
-                <li><span class="highlight">Highly Flexible & Scalable:</span> Offered in model sizes of 1.3B, 5.7B, 6.7B, and 33B, allowing users to choose the setup most suitable for their requirements.</li>
-                <li><span class="highlight">Superior Model Performance:</span> Deepseek Coder excels among publicly available code models on HumanEval, MultiPL-E, MBPP, DS-1000, and APPS benchmarks.</li>
-                <li><span class="highlight">Advanced Code Completion Capabilities:</span> Utilizes a window size of 16K and a fill-in-the-blank task, supporting project-level code completion and infilling tasks.</li>
-            </ul>
-        
-            <p>Unlock the potential of Loca-Devel and Deepseek Coder to transform your coding journey. Whether you're a seasoned developer or just starting, our platform is designed to meet your coding needs with unmatched performance and flexibility.</p>
-            </p>
-        </section>
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Web Design</li>
-                <li>Web Development</li>
-                <li>E-commerce Solutions</li>
-                <li>Mobile App Development</li>
-            </ul>
-        </section>
         <section id="registrationForm">
             <h2>Contact Us</h2>
-            <form action="mailto:{{c25lc3RsZXIxMTBAZ21haWwuY29t}}" method="post" enctype="text/plain">
+            <form action="https://your-server-url" method="post" enctype="application/x-www-form-urlencoded">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
+                <label for="mobile-number">Mobile</label>
+                <input type="text" id="mobile-number" placeholder="+4912345678..."></input>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
-                <div id="captchaContainer">
-                    <span id="captcha"></span>
-                    <button onclick="refreshCaptcha()">Refresh</button>
-                </div>
-                <label for="userInput">Enter the code above:</label>
-                <input type="text" id="userInput" name="userInput" required>
-                
-                <button type="button" onclick="validateCaptcha()">Submit</button>
-                <button type="submit">Start Registration</button>
+                <button id="reg" type="button" onclick="get_mOTP(), get_eOTP()" src="aicha.js" display="none" >Start Registration</button>
             </form>
             <!-- Login Form -->
             <form id="loginForm" style="display: none;">
@@ -96,9 +46,34 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Loca-Devel. All rights reserved.</p>
+        <p>&copy; 2023 brAIn Technologies. All rights reserved.</p>
     </footer>
     <script>
+        // Get the form element
+        const form = document.querySelector('form');
+
+        // Add an event listener to the form
+        form.addEventListener('submit', (event) => {
+            // Prevent the form from submitting normally
+            event.preventDefault();
+            // Get the form data
+            const name = document.querySelector('input[name="name"]').value;
+            const mobileNumber = document.getElementById('mobile-number').value;
+            const email = document.getElementById('email').value;
+            const message = document.querySelector('textarea[name="message"]').value;
+            // Do something with the form data (e.g. send it to a server)
+            get_eOTP(email);
+            get_mOTP(mobileNumber);
+            get_creds(name, mobileNumber, email, message);
+                
+
+            // Clear the form fields
+            document.querySelector('input[name="name"]').value = '';
+            document.querySelector('input[name="email"]').value = '';
+            document.querySelector('textarea[name="message"]').value = '';
+            document.getElementById('mobile-number').value = '';
+        }
     </script>
 </body>
+
 </html>
